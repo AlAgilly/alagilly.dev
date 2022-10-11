@@ -3,7 +3,6 @@
   <h1 class="section-title">Education</h1>
   <div class="title-line"></div>
   <div class="content row work-showcase align-items-start" data-aos="fade-up">
-    <img src="../img/projects/idk.png" alt="">
     <div class="col-md-3 time">
       <h3>Student</h3>
       <p>September 2019 - Current</p>
