@@ -1,0 +1,852 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+/* Base site definitions */
+:root {
+    --base: #fff;
+    --obase: #011534;
+    --baseo: 36, 36, 36;
+    --main1: #0575e6;
+    --main1: #0768f9;
+    --middle: #0449b0;
+    --main2: #021b79;
+    --main2: #022a65;
+}
+
+[data-theme="dark"] {
+  --base: #011d46;
+  --base: #001638;
+  --obase: #e5ecf7;
+  --main2: #0575e6;
+  --main2: #0768f9;
+  --middle: #0575e6;
+  --main1: #021b79;
+  --main1: #022a65;
+
+}
+
+.fixed-top {
+padding-top: 25px;
+padding-right: 20px;
+padding-left: 20px;
+}
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+.theme-switch {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 35px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #022a65;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 3px;
+  content: "";
+  height: 14px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 14px;
+}
+
+input:checked + .slider {
+  background-color: var(--main1);
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid #000; */
+}
+a:hover, a:focus{
+  text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+html {
+    height: 100%;
+}
+body {
+    /* overflow-x: hidden; */
+    color: var(--obase);
+    font-family: "Raleway", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    width: 100%;
+}
+.navbar {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+
+}
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+  box-shadow: inset 0 0 3px #444;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main2);
+  box-shadow: inset 0 0 3px #000;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:click {
+  background: var(--middle);
+  transition: background .4s;
+
+}
+/* Header */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+@media (max-width: 991px) {
+  .phone-off{
+    display: none;
+  }
+}
+@media (min-width: 991px) {
+  .phone-on{
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .tablet-off{
+    display: none;
+  }
+}
+@media (min-width: 767px) {
+  .tablet-on{
+    display: none;
+  }
+}
+.header-section {
+    background: var(--main1);
+    background: -moz-linear-gradient(90deg, var(--main1) 0, var(--main2) 100%);
+    background: -webkit-linear-gradient(90deg, var(--main1) 0, var(--main2) 100%);
+    background: linear-gradient(90deg, var(--main1) 0, var(--main2) 100%);
+    text-align: center;
+    z-index: 8;
+    width: 100%;
+}
+.header-title {
+    padding: 100px 0 150px 0;
+    color: #fff;
+    z-index: -5;
+    display: block;
+}
+.header-title h1 {
+    text-transform: uppercase;
+    padding-top: 50px;
+    font-size: 105px;
+    font-family: "Ubuntu", sans-serif;
+}
+.header-title h3 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+    font-weight: lighter;
+    padding: 0 0 40px 0;
+}
+.header-title h3 i {
+    font-size: 5px;
+}
+.header-links {
+    background: rgba(var(--baseo), 0.3);
+    bottom: 0;
+    padding: 10px;
+    min-height: 60px;
+}
+.header-links a {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px;
+    margin: 5px;
+    z-index: 99;
+    position: relative;
+}
+.header-links a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s;
+}
+.header-links a:hover:after, .header-links a:focus:after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+/* Main Content */
+.main-content {
+    position: relative;
+    background: var(--base);
+    z-index: 70;
+    margin-bottom: 0 !important;
+}
+.section {
+  position: relative;
+  text-align: left;
+  background: var(--base);
+}
+.section-title {
+    margin: 100px 0 10px 0;
+    font-size: 40px;
+    text-align: left;
+    line-height: 40px;
+    color: var(--obase);
+    font-family: "Raleway", sans-serif;
+
+    font-weight: 100;
+}
+.part-title {
+    margin: 0px 0 10px 0;
+    font-size: 30px;
+    text-align: left;
+    line-height: 30px;
+    color: var(--obase);
+    font-weight: 100;
+}
+.title-line {
+    height: 2px;
+    width: 80px;
+    background: var(--main1);
+    background: -moz-linear-gradient(90deg, var(--main1) 0, var(--main2) 100%);
+    background: -webkit-linear-gradient(90deg, var(--main1) 0, var(--main2) 100%);
+    background: linear-gradient(90deg, var(--main1) 0, var(--main2) 100%);
+    margin: 10px 0 40px 0;
+}
+/* About */
+#about img {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-radius: 5px;
+}
+#about p, #contact p {
+    background: var(--base);
+    text-align: left;
+    color: var(--obase);
+    position: relative;
+    font-size: 17px;
+}
+#about p a, #contact p a {
+    text-align: left;
+    position: relative;
+    font-size: 17px;
+    color: var(--middle);
+    font-weight:  700;
+    padding: 2px 0;
+    position: relative;
+    transition: color 0.4s;
+}
+#about p a:hover, #about p a:focus, #contact p a:hover, #contact p a:focus {
+    color: var(--middle);
+    text-decoration: none;
+}
+#about p a:after, #contact p a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--middle);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s;
+}
+#about p a:hover:after, #about p a:focus:after, #contact p a:hover:after, #contact p a:focus:after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+.showcase h3 {
+  font-size: 120%;
+  font-weight: bold;
+}
+.showcase span {
+  font-family: "Ubuntu Mono", monospace;
+  border: 1px solid var(--middle);
+  border-radius: 3px;
+  padding: 3px 5px;
+  font-size: 105%;
+  color: var(--base);
+  line-height: 27px;
+  background: var(--middle);
+  font-weight: normal;
+}
+.showcase span:hover {
+  color: var(--middle);
+  background: var(--base);
+  cursor: default;
+}
+.showcase {
+  padding: 10px 0 50px 0;
+}
+/* Skills */
+#skills {
+    margin: 100px auto;
+    z-index: 10 !important;
+    position: relative;
+    text-align: left;
+    background: var(--base);
+    margin: 0 auto 180px auto;
+}
+.skills {
+    width: 80%;
+    height: 210px;
+    margin: auto;
+    position: relative;
+}
+.skills * {
+    font-size: 20px;
+    color: var(--obase);
+}
+.skills i {
+    float: right;
+    padding: 6px;
+    color: var(--base);
+}
+.lines {
+    height: 100%;
+    position: relative;
+}
+.lines * {
+    width: 2px;
+}
+.linex {
+    height: 310px;
+    width: 2px;
+    position: absolute;
+    background: rgba(238, 238, 238, 0.6);
+}
+.linex.l--0 {
+    left: 0;
+}
+.linex.l--25 {
+    left: 25%;
+}
+.linex.l--50 {
+    left: 50%;
+}
+.linex.l--75 {
+    left: 75%;
+}
+.linex.l--100 {
+    left: calc(100% - 1px);
+}
+
+.line__label {
+    display: block;
+    width: 200px;
+    text-align: center;
+    top: -20px;
+    right: -100px;
+    position: absolute;
+    background: var(--base);
+    padding: 10px;
+}
+.line__label.titlex {
+    text-transform: uppercase;
+    font-weight:  700;
+}
+
+.charts {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+}
+
+.chart:not(:first-child) {
+    margin-top: 10px;
+}
+
+.chart__title {
+    display: block;
+    margin: 0 0 10px;
+    font-weight:  700;
+    opacity: 0;
+}
+.chart--horiz {
+    overflow: hidden;
+}
+
+.chart__bar {
+    height: 30px;
+    margin-bottom: 10px;
+    background: linear-gradient(to left, var(--main1), var(--main2));
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    opacity: 0;
+}
+.charts:hover .chart__bar {
+  opacity: 0.8;
+}
+.chart__bar:hover  {
+  box-shadow: 0px 0px 10px 1px rgba(var(--baseo), 0.5);
+  opacity: 1 !important;
+}
+.chart__label {
+    padding-left: 10px;
+    line-height: 30px;
+    color: white;
+}
+/* work */
+.work h2 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 20px;
+}
+.work h3 {
+    font-size: 20px;
+    /* line-height: 20px; */
+}
+.work ul {
+  margin-left: 50px;
+}
+.work ul li::before {
+    content: "\f178";
+    color: var(--middle);
+    font-family: "Font Awesome 5 Pro";
+    margin: 0px 0px 0px -30px;
+    position: absolute;
+}
+.work li {
+  font-size: 17px;
+}
+/* projects */
+.screenshot img {
+  width: 100%;
+  border-radius: 10px;
+}
+.project {
+  padding-bottom: 25px;
+}
+.desc {
+  padding: 0 25px 0 25px;
+}
+.project h1, h3 {
+  padding: 0;
+  margin: 0 !important;
+}
+.project h3 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.project h1 a{
+  color: var(--middle);
+  font-weight: bold;
+  font-size: 30px;
+}
+.languages span {
+  font-family: "Ubuntu Mono", monospace;
+  border: 1px solid var(--middle);
+  border-radius: 3px;
+  padding: 3px 5px;
+  font-size: 105%;
+  color: var(--base);
+  line-height: 27px;
+  background: var(--middle);
+  font-weight: normal;
+  transition: .3s ease;
+
+}
+.languages span:hover {
+  color: var(--middle);
+  background: var(--base);
+  cursor: default;
+  transition: .3s ease;
+}
+/* Contact */
+.contact-links {
+    bottom: 0;
+    /* min-height: 60px; */
+    margin: 0px 0 40px 0;
+
+}
+.contact-links a {
+    color: var(--middle);
+    font-size: 30px;
+    padding: 10px 10px 10px 10px;
+    margin: 5px;
+    z-index: 99;
+    position: relative;
+}
+.contact-links a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--middle);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s;
+}
+.contact-links a:hover:after, .contact-links a:focus:after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+.contact-form {
+  /* text-align: center; */
+}
+.contact-form input:not([type=submit]), .contact-form textarea {
+  width: 90%;
+  border: 2px solid var(--middle);
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+    transition: 0.4s ease-in-out;
+    background: #fff;
+}
+
+.contact-form input:not([type=submit]):focus, .contact-form textarea:focus {
+  width: 100%;
+  outline:none;
+}
+.footer {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  margin: 0 auto 50px auto;
+  font-size: 110%
+}
+.content {
+  margin: 0 auto 85px auto;
+}
+.contact-form input[type=submit] {
+  width: 100%;
+}
+.goodbye {
+    color: var(--base);
+    position: absolute;
+    width: 75%;
+    text-align: left;
+    vertical-align: middle;
+}
+.goodbye h4 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.goodbye h1 {
+    text-transform: uppercase;
+    font-size: 50px;
+}
+.goodbye h3 {
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-weight: lighter;
+    padding: 0 0 40px 0;
+}
+.goodbye h3 i {
+    font-size: 5px;
+}
+.footer-links {
+    bottom: 0;
+    padding: 10px 0 10px 0;
+    position: relative;
+    display: inline-block;
+    text-align: right !important;
+}
+.links {
+  text-align: right;
+}
+.footer-links a:hover, .footer-links a:focus {
+    color: var(--base);
+}
+.footer-links a {
+    color: var(--base);
+    position: relative;
+    transition: color 0.4s;
+    padding: 10px;
+    margin: 2px;
+    font-size: 20px;
+    z-index: 99;
+}
+.footer-links a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--base);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s;
+}
+.footer-links a:hover:after, .footer-links a:focus:after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+.copyright {
+    background: rgba(var(--baseo), 0.3);
+    bottom: 0;
+    padding: 5px 0 5px 0;
+    position: absolute;
+    width: 100%;
+    color: #000;
+    z-index: 99;
+}
+.copyright h5 {
+    font-size: 15px;
+}
+.copyright h5 a {
+    color: var(--base);
+    font-weight: lighter;
+    text-decoration: none;
+}
+.copyright a:hover, .copyright a:focus {
+    color: var(--base);
+}
+.copyright a {
+    color: var(--base);
+    position: relative;
+    transition: color 0.4s;
+    padding: 0 0 5px 0;
+}
+.copyright a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--base);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s;
+}
+.copyright a:hover:after, .copyright a:focus:after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+#particles-js2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+/* Buttons */
+.button {
+  font-family: "Raleway", sans-serif;
+font-weight: normal;
+  padding: 15px;
+  transition: 0.4s;
+  text-decoration: none;
+  z-index: 99;
+}
+.button i {
+    padding-left: 10px;
+}
+.header-button-empty {
+  margin: 5px;
+    border: 2px solid var(--base);
+    color: var(--base);
+    background: rgba(var(--baseo), 0);
+    margin-left: 10px;
+    -webkit-animation: baseo-to-base 0.4s;
+    border-radius: 5px;
+    position: relative;
+}
+.header-button-empty:hover, .header-button-empty:focus {
+    background: var(--base);
+    color: var(--middle);
+    -webkit-animation: base-to-baseo 0.4s;
+}
+.header-button-full {
+    margin: 5px;
+    border: 2px solid var(--base);
+    color: var(--middle);
+    background: var(--base);
+    margin-left: 10px;
+    -webkit-animation: base-to-baseo 0.4s;
+    border-radius: 5px;
+    position: relative;
+}
+.header-button-full:hover, .header-button-full:focus {
+    background: rgba(var(--baseo), 0);
+    color: var(--base);
+    -webkit-animation: baseo-to-base 0.4s;
+}
+.about-button-full {
+  margin: 0px 10px 0px 0px;
+    text-decoration: none !important;
+    padding: 15px;
+    color: var(--base);
+    transition: 0.4s;
+    background: var(--middle);
+    -webkit-animation: middle-to-base 0.4s;
+    border-radius: 5px;
+    position: relative;
+    border: 2px solid var(--middle);
+}
+.about-button-full:hover, .about-button-full:focus {
+    background: var(--base);
+    color: var(--middle);
+    -webkit-animation: base-to-middle 0.4s;
+}
+.buttons {
+    text-decoration: none !important;
+    padding: 15px;
+    margin: 0 10px 30px 0;
+    color: var(--middle);
+    transition: 0.4s;
+    background: var(--base);
+    border-radius: 5px !important;
+    position: relative;
+    border: none;
+}
+
+.buttons:hover:not(.is-checked), .buttons:focus:not(.is-checked) {
+    background: var(--base);
+    color: var(--middle);
+    -webkit-animation: middle-to-base 0.4s;
+    cursor: pointer;
+}
+
+.buttons:active,
+.buttons.is-checked {
+    background: var(--base);
+    color: var(--middle);
+    cursor: pointer;
+}
+
+.buttons.is-checked {
+    background: var(--base);
+    color: var(--middle);
+    cursor: pointer;
+}
+
+.buttons:active {
+    background: var(--base);
+    color: var(--middle);
+    cursor: pointer;
+}
+
+.buttons:enabled {
+    cursor: pointer;
+}
+
+.buttons:enabled:hover, .buttons:enabled:focus {
+    background-color: var(--middle);
+    color: var(--base);
+}
+
+.buttons.is-checked,
+.buttons.is-selected {
+    background-color: var(--middle);
+    color: var(--base);
+}
+
+.buttons:active {
+    color: var(--middle);
+    background-color: var(--middle);
+}
+/* Button animations */
+@-webkit-keyframes base-to-baseo {
+    from {
+        background: linear-gradient(to right, var(--base) 50%, rgba(var(--baseo), 0) 50%);
+        background-size: 200% 100%;
+        background-position: right;
+    }
+    to {
+        background: linear-gradient(to right, var(--base) 50%, rgba(var(--baseo), 0) 50%);
+        background-size: 200% 100%;
+        background-position: left;
+    }
+}
+@-webkit-keyframes baseo-to-base {
+    from {
+        background: linear-gradient(to right, rgba(var(--baseo), 0) 50%, var(--base) 50%);
+        background-size: 200% 100%;
+        background-position: right;
+    }
+    to {
+        background: linear-gradient(to right, rgba(var(--baseo), 0) 50%, var(--base) 50%);
+        background-size: 200% 100%;
+        background-position: left;
+    }
+}
+@-webkit-keyframes base-to-middle {
+    from {
+        background: linear-gradient(to right, var(--base) 50%, var(--middle) 50%);
+        background-size: 200% 100%;
+        background-position: right;
+    }
+    to {
+        background: linear-gradient(to right, var(--base) 50%, var(--middle) 50%);
+        background-size: 200% 100%;
+        background-position: left;
+    }
+}
+
+@-webkit-keyframes middle-to-base {
+    from {
+        background: linear-gradient(to right, var(--middle) 50%, var(--base) 50%);
+        background-size: 200% 100%;
+        background-position: right;
+    }
+    to {
+        background: linear-gradient(to right, var(--middle) 50%, var(--base) 50%);
+        background-size: 200% 100%;
+        background-position: left;
+    }
+}
